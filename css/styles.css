@@ -69,6 +69,7 @@ body {
     display: flex;
     margin-left: 93px;
 }
+
 .site-nav .item + .item {
     margin-left: 50px;
 }
@@ -83,10 +84,38 @@ body {
     cursor: var(--cursor-default);
     padding-top: 32px;
     padding-bottom: 32px;
+    position: relative;
+}
+
+.site-nav .link.current::after  {
+    content: '';
+    display: block;
+    width: 100%;
+    height: 4px;
+    background-color: var(--color-logo);
+    border-radius: 2px;
+    position: absolute;
+    bottom: 0;
+}
+.site-nav .link::after {
+    content: '';
+    transition: 250ms cubic-bezier(0.4, 0, 0.2, 1);
+}
+.site-nav .link:hover::after,
+.site-nav .link:focus::after {
+    content: '';
+    display: block;
+    width: 100%;
+    height: 4px;
+    background-color: var(--color-logo);
+    border-radius: 2px;
+    position: absolute;
+    bottom: 0;
 }
 .site-nav .link:hover, 
 .site-nav .link:focus {
     color: var(--color-logo);
+    transition: 250ms cubic-bezier(0.4, 0, 0.2, 1);
 }
 .site-nav .link.current {
     color: var(--color-logo);
@@ -102,17 +131,13 @@ body {
 .info-svg {
     margin-right: 10px;
     vertical-align: middle;
-    fill: #757575;
-}
-.link:hover,
-.link:focus {
-    fill: var(--color-logo);
 }
 .info-svg .item + .item {
     margin-left: 10px;
 }
 .info .link {
     color: var(--primary-text-color);
+    fill: #757575;
     font-weight: 500;
     font-size: 14px;
     line-height: 1.1;
@@ -123,10 +148,14 @@ body {
 .info .item + .item {
     margin-left: 50px;
 }
-.info .link:hover, 
-.info .link:focus {
+.item .link:hover, 
+.item .link:focus {
+    fill: var(--color-logo);
     color: var(--color-logo);
+    transition: 250ms cubic-bezier(0.4, 0, 0.2, 1);
 }
+
+
                                 /* Servis section */
 .service {
     background-image: linear-gradient(to top, rgba(47, 48, 58, 0.4), rgba(47, 48, 58, 0.4)), url(../images/Background-Img.jpg);
@@ -225,10 +254,29 @@ body {
 .work-list .item + .item {
     margin-left: 30px;
 }
-.work-list img {
+.work-img {
+    height: 100%;
+}
+.work-list .item{
     display: block;
     max-width: 100%;
     height: auto;
+    position: relative;
+}
+.work-list .item::after {
+    content:'';
+    position: absolute;
+    width: 370px;
+    height: 70px;
+    left: 0;
+    bottom: 0;
+    background-color: rgba(47, 48, 58, 0.8);
+}
+ .work-name::after .work-img{
+    content:'';
+    position: absolute;
+    display: inline-block;
+    /* bottom: 0; */
 }
 
                                 /* Team section */
