@@ -31,14 +31,13 @@
                 <a class="link" href="tel:+380961111111"><svg class="info-svg" width="10" height="16">
                     <use href="./images/symbol-defs.svg#icon-smartphone"></use>
                 </svg>+38 096 111 11 11</a></li>
-                
         </ul>
         </div>
     </header>
     <main>
         <section class="service">
             <h1 class="service-hero">Эффективные решения<br>для вашего бизнеса</h1>
-            <button type="button" class="service-button">Заказать услугу</button>
+            <button data-modal-open type="button" class="service-button">Заказать услугу</button>
         </section>
         <section class="benefits">
             <!-- h2 надо спрятать -->
@@ -310,5 +309,17 @@
                     </div>
                 </div>
         </footer>
+        <!-- Модалка на Service section -->
+        <div data-modal class="backdrop is-hidden">
+            <div class="modal">
+                <button data-modal-close class="button-close" type="button" >  
+                <svg class="modal-close" width="11" height="11" >
+                    <use href="./images/symbol-defs.svg#model-close"></use>
+                </svg>
+                </button>
+            </div>
+        </div>
+        <script src="./js/modal.js"></script>
 </body>
 </html>
+
